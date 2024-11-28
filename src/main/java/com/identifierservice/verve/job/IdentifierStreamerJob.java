@@ -12,7 +12,7 @@ public class IdentifierStreamerJob {
 
     private final IdentifierService identifierService;
 
-    @Scheduled(fixedRateString = "${verve.unique.logInterval:60000}")
+    @Scheduled(fixedRateString = "${verve.unique.logInterval:60000}", initialDelayString = "${verve.unique.logInterval:60000}")
     public void logUniqueRequestCount() {
         identifierService.manageUniqueIdentifierCount();
     }
